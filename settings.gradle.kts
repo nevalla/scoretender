@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "235"
+rootProject.name = "scoretender"
 include(":app")
