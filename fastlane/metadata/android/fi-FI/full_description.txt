@@ -1,0 +1,16 @@
+Änärivahti kertoo yön NHL-tulokset, tulevan yön otteluohjelman ja käynnissä olevien otteluiden tilanteet ja listaa suomalaisten pisteet jokaisen tuloksen alle.
+
+• Suomalaiset ensin: näet jokaisesta ottelusta, miten suomalaisilla meni – maalit, syötöt ja peliaika. Myös muut vähintään kolme pistettä tehneet pääsevät listalle.
+• Päivä kerrallaan: pyyhkäise päivästä toiseen tai hyppää kalenterista mihin tahansa päivään.
+• Livenä: käynnissä olevat ottelut päivittyvät itsestään.
+• Koko ottelu: erätulokset, jokainen maali syöttäjineen, joukkuetilastot, maalivahdit ja ottelun tähdet.
+• Ennen ottelua: joukkueiden parhaat pistemiehet viiden viime ottelun ajalta ja maalivahtien kauden tilastot.
+• Vaalea ja tumma teema sekä teemaan sopiva kuvake Android 13:ssa ja uudemmissa.
+
+Suomen lisäksi voit seurata 16 muun maan pelaajia, esimerkiksi Ruotsin, Kanadan tai Tšekin.
+
+Ei tiliä, ei mainoksia eikä seurantaa. Sovellus ei kerää henkilötietoja.
+
+Sovelluksen kieli on toistaiseksi englanti.
+
+Änärivahti on itsenäinen sovellus. Se ei ole National Hockey Leaguen tekemä eikä sen hyväksymä. NHL sekä joukkueiden nimet, logot ja tiedot kuuluvat NHL:lle ja sen joukkueille.
