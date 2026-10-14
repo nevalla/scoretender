@@ -23,6 +23,19 @@ Requires JDK 17 or newer (the one bundled with Android Studio works) and the And
 ./gradlew testDebugUnitTest    # run the unit tests
 ```
 
+Release builds are signed when a `keystore.properties` file in the project root points to the upload key; without it they're left unsigned. The file is gitignored:
+
+```properties
+storeFile=/path/to/upload-key.jks
+storePassword=...
+keyAlias=upload
+keyPassword=...
+```
+
+```sh
+./gradlew bundleRelease        # signed app bundle for Google Play
+```
+
 The app is written in Kotlin with Jetpack Compose and Material 3, and supports Android 8.0 (API 26) and newer.
 
 ## Data
