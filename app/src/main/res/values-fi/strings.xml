@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Finnish phones keep the original name: Änäri is Finnish slang for the NHL, and vahti both a watcher and a goalie. -->
+<resources>
+    <string name="app_name">Änärivahti</string>
+</resources>
