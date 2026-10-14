@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Stops Swedish in Sweden falling back to the Finnish name in values-sv-rFI. -->
+<resources>
+    <string name="app_name">Scoretender</string>
+</resources>

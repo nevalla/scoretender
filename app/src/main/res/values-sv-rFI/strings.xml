@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Swedish-speaking Finns keep the Finnish name too; see values-fi. -->
+<resources>
+    <string name="app_name">Änärivahti</string>
+</resources>

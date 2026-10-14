@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Stops other English regions (e.g. en-GB) falling back to the Finnish name in values-en-rFI. -->
+<resources>
+    <string name="app_name">Scoretender</string>
+</resources>
