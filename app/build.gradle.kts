@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.nevalla.scoretender"
+        applicationId = "io.github.nevalla.scoretender"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
