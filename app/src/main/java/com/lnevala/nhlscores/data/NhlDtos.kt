@@ -60,7 +60,7 @@ data class PeriodDescriptorDto(val number: Int, val periodType: String, val maxR
 data class GameOutcomeDto(val lastPeriodType: String)
 
 @Serializable
-data class PlayerBiosDto(val data: List<PlayerBioDto>)
+data class PlayerBiosDto(val data: List<PlayerBioDto>, val total: Int)
 
 @Serializable
 data class PlayerBioDto(val playerId: Long)
