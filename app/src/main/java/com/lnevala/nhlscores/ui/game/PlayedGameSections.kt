@@ -33,6 +33,7 @@ import coil3.compose.AsyncImage
 import com.lnevala.nhlscores.R
 import com.lnevala.nhlscores.domain.FollowedPlayers
 import com.lnevala.nhlscores.domain.GameDetail
+import com.lnevala.nhlscores.domain.GoalieLine
 import com.lnevala.nhlscores.domain.GoalEvent
 import com.lnevala.nhlscores.domain.GoalSituation
 import com.lnevala.nhlscores.domain.SkaterLine
@@ -46,11 +47,13 @@ import com.lnevala.nhlscores.ui.common.logoForTheme
 fun LazyListScope.playedGameSections(detail: GameDetail, followed: FollowedPlayers) {
     // Scorers first; big countries can have a dozen players in one game.
     val followedSkaters = detail.skaters.filter { it.player.id in followed }.sortedByDescending { it.goals + it.assists }
+    val followedGoalies = detail.goalies.filter { it.player.id in followed }
 
     val country = followed.country
-    if (country != null && followedSkaters.isNotEmpty()) item(key = "followed") {
+    if (country != null && (followedSkaters.isNotEmpty() || followedGoalies.isNotEmpty())) item(key = "followed") {
         DetailSection("${country.flag} ${country.displayName}") {
             followedSkaters.forEach { FollowedSkaterRow(it) }
+            followedGoalies.forEach { GoalieRow(it, name = it.player.name) }
         }
     }
     if (detail.goals.isNotEmpty()) item(key = "scoring") {
@@ -61,15 +64,7 @@ fun LazyListScope.playedGameSections(detail: GameDetail, followed: FollowedPlaye
     }
     if (detail.goalies.isNotEmpty()) item(key = "goalies") {
         DetailSection(stringResource(R.string.goalies)) {
-            detail.goalies.forEach {
-                PlayerStatRow(
-                    name = playerName(it.player, followed),
-                    details = listOfNotNull(it.teamAbbrev, it.decision, stringResource(R.string.time_on_ice, it.timeOnIce))
-                        .joinToString(" · "),
-                    value = formatSavePercentage(it.savePercentage),
-                    valueCaption = stringResource(R.string.saves_of_shots, it.saves, it.shotsAgainst),
-                )
-            }
+            detail.goalies.forEach { GoalieRow(it, name = playerName(it.player, followed)) }
         }
     }
     if (detail.threeStars.isNotEmpty()) item(key = "threeStars") {
@@ -92,6 +87,17 @@ private fun FollowedSkaterRow(skater: SkaterLine) {
         ),
         value = "${skater.goals}+${skater.assists}",
         emphasized = skater.goals + skater.assists > 0,
+    )
+}
+
+@Composable
+private fun GoalieRow(goalie: GoalieLine, name: String) {
+    PlayerStatRow(
+        name = name,
+        details = listOfNotNull(goalie.teamAbbrev, goalie.decision, stringResource(R.string.time_on_ice, goalie.timeOnIce))
+            .joinToString(" · "),
+        value = formatSavePercentage(goalie.savePercentage),
+        valueCaption = stringResource(R.string.saves_of_shots, goalie.saves, goalie.shotsAgainst),
     )
 }
 
